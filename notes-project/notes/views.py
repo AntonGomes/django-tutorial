@@ -31,7 +31,7 @@ class NotesListView(LoginRequiredMixin, ListView):
     model = Notes
     context_object_name = 'notes'
     template_name = 'notes/notes_list.html'
-    login_url = '/admin'
+    login_url = '/login' # redirects the user to /admin if not loggen in
 
     def get_queryset(self):
         return self.request.user.notes.all()
